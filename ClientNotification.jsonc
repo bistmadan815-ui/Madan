@@ -1,0 +1,170 @@
+{
+  "name": "Invoice",
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+      "type": "string",
+      "title": "Invoice Number"
+    },
+    "client_id": {
+      "type": "string",
+      "title": "Client ID"
+    },
+    "client_name": {
+      "type": "string",
+      "title": "Client Name"
+    },
+    "client_email": {
+      "type": "string",
+      "title": "Client Email"
+    },
+    "client_company": {
+      "type": "string",
+      "title": "Client Company"
+    },
+    "service": {
+      "type": "string",
+      "title": "Service"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Amount (NPR)"
+    },
+    "tax_rate": {
+      "type": "number",
+      "title": "Tax Rate (%)",
+      "default": 13
+    },
+    "due_date": {
+      "type": "string",
+      "title": "Invoice Date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "unpaid",
+        "paid",
+        "overdue",
+        "cancelled",
+        "payment_requested"
+      ],
+      "default": "unpaid",
+      "title": "Status"
+    },
+    "paid_date": {
+      "type": "string",
+      "title": "Paid Date"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    },
+    "late_fine_amount": {
+      "type": "number",
+      "title": "Late Fine Amount (NPR)"
+    },
+    "late_fine_days": {
+      "type": "number",
+      "title": "Days Overdue at Penalization"
+    },
+    "late_fine_applied": {
+      "type": "boolean",
+      "title": "Late Fine Applied",
+      "default": false
+    },
+    "waiver_requested": {
+      "type": "boolean",
+      "title": "Waiver Requested",
+      "default": false
+    },
+    "waiver_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "pending",
+        "approved",
+        "denied"
+      ],
+      "default": "none",
+      "title": "Waiver Status"
+    },
+    "credit_period_days": {
+      "type": "number",
+      "title": "Credit Period (Days)"
+    },
+    "payment_request_date": {
+      "type": "string",
+      "title": "Payment Request Date"
+    },
+    "payment_due_date": {
+      "type": "string",
+      "title": "Payment Due Date"
+    },
+    "payment_reference": {
+      "type": "string",
+      "title": "Payment Reference / Transaction ID"
+    },
+    "payment_method_used": {
+      "type": "string",
+      "title": "Payment Method Used"
+    },
+    "credit_extension_requested": {
+      "type": "boolean",
+      "title": "Credit Extension Requested",
+      "default": false
+    },
+    "credit_extension_reason": {
+      "type": "string",
+      "title": "Credit Extension Reason"
+    },
+    "credit_extension_days": {
+      "type": "number",
+      "title": "Additional Days Requested"
+    },
+    "credit_extension_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "none",
+      "title": "Credit Extension Status"
+    },
+    "task_id": {
+      "type": "string",
+      "title": "Linked Task ID"
+    },
+    "discount_amount": {
+      "type": "number",
+      "title": "Approved Discount Amount (NPR)",
+      "default": 0
+    },
+    "discount_request_id": {
+      "type": "string",
+      "title": "Discount Request ID"
+    },
+    "discount_status": {
+      "type": "string",
+      "enum": [
+        "none",
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "none",
+      "title": "Discount Status"
+    }
+  },
+  "required": [
+    "invoice_number",
+    "client_id",
+    "service",
+    "amount"
+  ]
+}

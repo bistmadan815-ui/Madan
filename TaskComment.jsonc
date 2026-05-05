@@ -1,0 +1,64 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "admin_id": {
+      "type": "string",
+      "title": "Admin ID"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "access_request",
+        "overdue_invoice",
+        "document_review",
+        "staff_alert",
+        "system_alert"
+      ],
+      "title": "Notification Type"
+    },
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "message": {
+      "type": "string",
+      "title": "Message"
+    },
+    "reference_id": {
+      "type": "string",
+      "title": "Reference ID (entity ID)"
+    },
+    "reference_type": {
+      "type": "string",
+      "title": "Reference Type (AccessRequest, Invoice, etc)"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "default": "medium",
+      "title": "Priority"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "title": "Is Read"
+    },
+    "email_sent": {
+      "type": "boolean",
+      "default": false,
+      "title": "Email Notification Sent"
+    }
+  },
+  "required": [
+    "admin_id",
+    "type",
+    "title",
+    "message"
+  ]
+}

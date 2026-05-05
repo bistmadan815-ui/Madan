@@ -1,0 +1,27 @@
+{
+  "name": "Announcement",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "title": "Title"
+    },
+    "body": {
+      "type": "string",
+      "title": "Body"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "normal",
+        "urgent",
+        "info"
+      ],
+      "default": "normal",
+      "title": "Priority"
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

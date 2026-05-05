@@ -1,0 +1,62 @@
+{
+  "name": "PaymentRequest",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "title": "Client ID"
+    },
+    "client_name": {
+      "type": "string",
+      "title": "Client Name"
+    },
+    "client_email": {
+      "type": "string",
+      "title": "Client Email"
+    },
+    "request_type": {
+      "type": "string",
+      "enum": [
+        "payment_request",
+        "advance_request",
+        "followup"
+      ],
+      "title": "Request Type"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Amount (NPR)"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "due_date": {
+      "type": "string",
+      "title": "Due Date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "acknowledged",
+        "paid",
+        "cancelled"
+      ],
+      "default": "pending",
+      "title": "Status"
+    },
+    "requested_by": {
+      "type": "string",
+      "title": "Requested By"
+    },
+    "invoice_id": {
+      "type": "string",
+      "title": "Invoice ID"
+    }
+  },
+  "required": [
+    "client_id",
+    "request_type"
+  ]
+}

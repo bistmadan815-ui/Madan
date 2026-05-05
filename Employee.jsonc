@@ -1,0 +1,66 @@
+{
+  "name": "Admin",
+  "type": "object",
+  "properties": {
+    "email": {
+      "type": "string",
+      "title": "Email Address",
+      "unique": true
+    },
+    "password_hash": {
+      "type": "string",
+      "title": "Password Hash"
+    },
+    "full_name": {
+      "type": "string",
+      "title": "Full Name"
+    },
+    "role_id": {
+      "type": "string",
+      "title": "Role ID"
+    },
+    "is_verified": {
+      "type": "boolean",
+      "title": "Email Verified",
+      "default": false
+    },
+    "is_active": {
+      "type": "boolean",
+      "title": "Active",
+      "default": true
+    },
+    "notification_settings": {
+      "type": "object",
+      "properties": {
+        "enable_alerts": {
+          "type": "boolean",
+          "default": true
+        },
+        "alert_types": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "email_on_critical": {
+          "type": "boolean",
+          "default": true
+        },
+        "email_on_high": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "title": "Notification Settings"
+    },
+    "last_login": {
+      "type": "string",
+      "title": "Last Login Date"
+    }
+  },
+  "required": [
+    "email",
+    "password_hash",
+    "full_name"
+  ]
+}

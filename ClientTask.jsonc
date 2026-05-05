@@ -1,0 +1,51 @@
+{
+  "name": "Appointment",
+  "type": "object",
+  "properties": {
+    "client_name": {
+      "type": "string",
+      "title": "Client Name"
+    },
+    "client_email": {
+      "type": "string",
+      "title": "Client Email"
+    },
+    "client_id": {
+      "type": "string",
+      "title": "Client ID"
+    },
+    "service": {
+      "type": "string",
+      "title": "Service"
+    },
+    "preferred_date": {
+      "type": "string",
+      "title": "Preferred Date"
+    },
+    "preferred_time": {
+      "type": "string",
+      "title": "Preferred Time"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "confirmed",
+        "cancelled",
+        "completed"
+      ],
+      "default": "pending",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "client_name",
+    "client_email",
+    "service",
+    "preferred_date"
+  ]
+}

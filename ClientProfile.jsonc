@@ -1,0 +1,40 @@
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.23';
+
+Deno.serve(async (req) => {
+  try {
+    const base44 = createClientFromRequest(req);
+    const user = await base44.auth.me();
+    
+    if (!user || user.role !== 'admin') {
+      return Response.json({ error: 'Admin access required' }, { status: 403 });
+    }
+
+    // Check if staff accounts already exist
+    const existing = await base44.asServiceRole.entities.StaffAccount.list('-created_date', 10);
+    
+    if (existing.length > 0) {
+      return Response.json({ message: 'Staff accounts already exist', count: existing.length });
+    }
+
+    // Create default staff account
+    const defaultPassword = btoa('password123'); // base64 encoded
+    const staffAccount = await base44.asServiceRole.entities.StaffAccount.create({
+      full_name: 'Staff Member',
+      email: 'staff@mbista.com.np',
+      password_hash: defaultPassword,
+      is_active: true,
+      password_changed: false,
+    });
+
+    return Response.json({ 
+      message: 'Staff account created',
+      account: {
+        email: 'staff@mbista.com.np',
+        password: 'password123',
+        name: 'Staff Member'
+      }
+    });
+  } catch (error) {
+    return Response.json({ error: error.message }, { status: 500 });
+  }
+});

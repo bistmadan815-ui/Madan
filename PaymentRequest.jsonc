@@ -1,0 +1,35 @@
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.23';
+
+Deno.serve(async (req) => {
+  try {
+    const base44 = createClientFromRequest(req);
+    const user = await base44.auth.me();
+    
+    if (!user || user.role !== 'admin') {
+      return Response.json({ error: 'Admin access required' }, { status: 403 });
+    }
+
+    const { email, password, full_name } = await req.json();
+    
+    if (!email || !password || !full_name) {
+      return Response.json({ error: 'Email, password, and full name are required' }, { status: 400 });
+    }
+
+    const passwordHash = btoa(password);
+    
+    const staff = await base44.asServiceRole.entities.StaffAccount.create({
+      full_name,
+      email: email.toLowerCase(),
+      password_hash: passwordHash,
+      is_active: true,
+      password_changed: false,
+    });
+
+    return Response.json({ 
+      message: 'Staff account created',
+      account: staff
+    });
+  } catch (error) {
+    return Response.json({ error: error.message }, { status: 500 });
+  }
+});

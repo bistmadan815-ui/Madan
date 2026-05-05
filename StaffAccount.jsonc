@@ -1,0 +1,35 @@
+import { createClientFromRequest } from 'npm:@base44/sdk@0.8.23';
+
+Deno.serve(async (req) => {
+  try {
+    const base44 = createClientFromRequest(req);
+    const user = await base44.auth.me();
+    
+    if (!user || user.role !== 'admin') {
+      return Response.json({ error: 'Admin access required' }, { status: 403 });
+    }
+
+    const { client_id, new_password } = await req.json();
+    
+    if (!client_id || !new_password) {
+      return Response.json({ error: 'client_id and new_password are required' }, { status: 400 });
+    }
+
+    const clients = await base44.asServiceRole.entities.ClientProfile.filter({ client_id });
+    if (!clients || clients.length === 0) {
+      return Response.json({ error: 'Client not found' }, { status: 404 });
+    }
+
+    const client = clients[0];
+    const passwordHash = btoa(new_password);
+    
+    await base44.asServiceRole.entities.ClientProfile.update(client.id, { password_hash: passwordHash });
+    
+    return Response.json({ 
+      success: true, 
+      message: `Password configured for ${client.full_name} (${client_id})` 
+    });
+  } catch (error) {
+    return Response.json({ error: error.message }, { status: 500 });
+  }
+});

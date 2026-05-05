@@ -1,0 +1,77 @@
+{
+  "name": "ClientProfile",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "title": "Full Name"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Contact Number"
+    },
+    "company_name": {
+      "type": "string",
+      "title": "Company Name"
+    },
+    "pan_number": {
+      "type": "string",
+      "title": "PAN Number"
+    },
+    "registration_number": {
+      "type": "string",
+      "title": "Registration Number"
+    },
+    "industry": {
+      "type": "string",
+      "title": "Business Industry"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "branch_details": {
+      "type": "string",
+      "title": "Branch Details"
+    },
+    "registration_date": {
+      "type": "string",
+      "title": "Date of Registration"
+    },
+    "desired_services": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "title": "Desired Services"
+    },
+    "client_id": {
+      "type": "string",
+      "title": "Client ID"
+    },
+    "password_hash": {
+      "type": "string",
+      "title": "Password Hash"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "pending",
+        "suspended"
+      ],
+      "default": "active",
+      "title": "Status"
+    }
+  },
+  "required": [
+    "full_name",
+    "email",
+    "company_name",
+    "industry"
+  ]
+}

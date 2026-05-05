@@ -1,0 +1,106 @@
+{
+  "name": "ClientRequest",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "title": "Client ID"
+    },
+    "client_name": {
+      "type": "string",
+      "title": "Client Name"
+    },
+    "client_email": {
+      "type": "string",
+      "title": "Client Email"
+    },
+    "request_type": {
+      "type": "string",
+      "enum": [
+        "invoice_request",
+        "discount_request",
+        "work_progress",
+        "terminate_work",
+        "general",
+        "support"
+      ],
+      "title": "Request Type"
+    },
+    "subject": {
+      "type": "string",
+      "title": "Subject"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description / Message"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "default": "medium",
+      "title": "Priority"
+    },
+    "attachment_url": {
+      "type": "string",
+      "title": "Attachment URL"
+    },
+    "attachment_name": {
+      "type": "string",
+      "title": "Attachment File Name"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_review",
+        "negotiating",
+        "resolved",
+        "rejected"
+      ],
+      "default": "pending",
+      "title": "Status"
+    },
+    "staff_response": {
+      "type": "string",
+      "title": "Staff Response (visible to client)"
+    },
+    "resolved_by": {
+      "type": "string",
+      "title": "Resolved By"
+    },
+    "timeline": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "title": "Status Timeline"
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      },
+      "title": "Comments / Thread"
+    },
+    "linked_invoice_id": {
+      "type": "string",
+      "title": "Linked Invoice ID"
+    },
+    "linked_invoice_number": {
+      "type": "string",
+      "title": "Linked Invoice Number"
+    },
+    "requested_discount_amount": {
+      "type": "number",
+      "title": "Requested Discount Amount (NPR)"
+    }
+  },
+  "required": [
+    "client_id",
+    "request_type"
+  ]
+}

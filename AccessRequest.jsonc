@@ -1,0 +1,91 @@
+{
+  "name": "ClientDocument",
+  "type": "object",
+  "properties": {
+    "client_id": {
+      "type": "string",
+      "title": "Client ID"
+    },
+    "client_name": {
+      "type": "string",
+      "title": "Client Name"
+    },
+    "client_email": {
+      "type": "string",
+      "title": "Client Email"
+    },
+    "document_type": {
+      "type": "string",
+      "enum": [
+        "Tax Document",
+        "Bank Statement",
+        "Business Record",
+        "Identity Document",
+        "Financial Statement",
+        "Other"
+      ],
+      "title": "Document Type"
+    },
+    "file_name": {
+      "type": "string",
+      "title": "File Name"
+    },
+    "file_url": {
+      "type": "string",
+      "title": "File URL"
+    },
+    "description": {
+      "type": "string",
+      "title": "Description"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending_review",
+        "reviewed",
+        "requires_action",
+        "approved"
+      ],
+      "default": "pending_review",
+      "title": "Status"
+    },
+    "staff_notes": {
+      "type": "string",
+      "title": "Staff Notes"
+    },
+    "reviewed_by": {
+      "type": "string",
+      "title": "Reviewed By"
+    },
+    "task_id": {
+      "type": "string",
+      "title": "Linked Task ID"
+    },
+    "task_ref": {
+      "type": "string",
+      "title": "Linked Task Ref"
+    },
+    "invoice_id": {
+      "type": "string",
+      "title": "Linked Invoice ID"
+    },
+    "invoice_number": {
+      "type": "string",
+      "title": "Linked Invoice Number"
+    },
+    "contract_id": {
+      "type": "string",
+      "title": "Linked Contract ID"
+    },
+    "uploaded_by_type": {
+      "type": "string",
+      "title": "Uploaded By (role)"
+    }
+  },
+  "required": [
+    "client_id",
+    "document_type",
+    "file_name",
+    "file_url"
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "name": "Contract",
+  "type": "object",
+  "properties": {
+    "contract_number": {
+      "type": "string",
+      "title": "Contract Number"
+    },
+    "client_id": {
+      "type": "string",
+      "title": "Client ID"
+    },
+    "client_name": {
+      "type": "string",
+      "title": "Client Official Name"
+    },
+    "client_pan": {
+      "type": "string",
+      "title": "Client PAN Number"
+    },
+    "client_registration": {
+      "type": "string",
+      "title": "Client Registration Number"
+    },
+    "client_address": {
+      "type": "string",
+      "title": "Client Address"
+    },
+    "firm_name": {
+      "type": "string",
+      "title": "Firm Official Name"
+    },
+    "firm_pan": {
+      "type": "string",
+      "title": "Firm PAN Number"
+    },
+    "firm_registration": {
+      "type": "string",
+      "title": "Firm Registration Number"
+    },
+    "firm_address": {
+      "type": "string",
+      "title": "Firm Address"
+    },
+    "service_type": {
+      "type": "string",
+      "title": "Service Type"
+    },
+    "contract_terms": {
+      "type": "string",
+      "title": "Contract Terms & Conditions"
+    },
+    "contract_date": {
+      "type": "string",
+      "title": "Contract Date"
+    },
+    "effective_date": {
+      "type": "string",
+      "title": "Effective Date"
+    },
+    "end_date": {
+      "type": "string",
+      "title": "End Date"
+    },
+    "client_signatory_name": {
+      "type": "string",
+      "title": "Client Signatory Name"
+    },
+    "client_signatory_title": {
+      "type": "string",
+      "title": "Client Signatory Title"
+    },
+    "firm_signatory_name": {
+      "type": "string",
+      "title": "Firm Signatory Name"
+    },
+    "firm_signatory_title": {
+      "type": "string",
+      "title": "Firm Signatory Title"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "signed",
+        "active",
+        "expired",
+        "terminated"
+      ],
+      "default": "draft",
+      "title": "Status"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Additional Notes"
+    }
+  },
+  "required": [
+    "contract_number",
+    "client_id",
+    "service_type"
+  ]
+}

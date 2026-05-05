@@ -1,0 +1,41 @@
+{
+  "name": "AccessRequest",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string",
+      "title": "Full Name"
+    },
+    "employee_id": {
+      "type": "string",
+      "title": "Employee ID"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "title": "Status"
+    },
+    "reviewed_by": {
+      "type": "string",
+      "title": "Reviewed By"
+    },
+    "reviewed_date": {
+      "type": "string",
+      "title": "Reviewed Date"
+    }
+  },
+  "required": [
+    "full_name",
+    "employee_id",
+    "email"
+  ]
+}
