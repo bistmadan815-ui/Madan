@@ -1,0 +1,69 @@
+// Shared constants — single source of truth to avoid duplication
+
+export const ALL_SERVICES = [
+  'Statutory Audit',
+  'Internal Audit',
+  'Tax Advisory',
+  'VAT Compliance',
+  'Corporate Tax Filing',
+  'Financial Advisory',
+  'Business Valuation',
+  'Due Diligence',
+  'Bookkeeping',
+  'Payroll Management',
+  'General Consultation',
+];
+
+export const DEFAULT_TEAM = [
+  {
+    name: 'Madhav Bista',
+    title: 'Managing Partner',
+    qualification: 'FCA, ICAAN',
+    specialization: 'Audit & Assurance',
+    bio: "Over 20 years of experience in statutory audit, forensic investigations, and regulatory compliance for Nepal's largest corporates and financial institutions.",
+    initials: 'MB',
+  },
+  {
+    name: 'Sujata Karmacharya',
+    title: 'Senior Partner',
+    qualification: 'CA, ICAAN',
+    specialization: 'Tax Advisory',
+    bio: 'A leading authority on Nepali tax law, Sujata has advised the government on VAT policy reform and led complex transfer pricing disputes for multinational clients.',
+    initials: 'SK',
+  },
+  {
+    name: 'Roshan Shrestha',
+    title: 'Director — Financial Advisory',
+    qualification: 'CFA, MBA',
+    specialization: 'Financial Advisory',
+    bio: 'Roshan brings deep expertise in M&A advisory, business valuation, and capital market transactions, with a track record spanning Nepal and South Asia.',
+    initials: 'RS',
+  },
+  {
+    name: 'Priya Adhikari',
+    title: 'Associate Director',
+    qualification: 'CA, ICAAN',
+    specialization: 'Audit & Assurance',
+    bio: "Priya leads internal audit engagements across the banking and manufacturing sectors, championing the firm's adoption of data-driven audit methodologies.",
+    initials: 'PA',
+  },
+];
+
+export const DEFAULT_SETTINGS = [
+  { key: 'phone',     label: 'Phone',          value: '+977-1-XXXXXXX' },
+  { key: 'email',     label: 'Email',           value: 'info@mbista.com.np' },
+  { key: 'whatsapp',  label: 'WhatsApp',        value: '+977-9841XXXXXX' },
+  { key: 'address',   label: 'Address',         value: 'Kathmandu, Nepal' },
+  { key: 'website',   label: 'Website',         value: 'https://mbista.com.np' },
+  { key: 'linkedin',  label: 'LinkedIn',        value: '' },
+  { key: 'pan',       label: 'PAN No.',         value: 'XXXXXXXXX' },
+  { key: 'vat',       label: 'VAT Reg. No.',    value: 'XXXXXXXXX' },
+];
+
+export const SPECIALIZATION_COLORS = {
+  'Audit & Assurance':  'text-blue-400 border-blue-400/30',
+  'Tax Advisory':       'text-emerald-400 border-emerald-400/30',
+  'Financial Advisory': 'text-violet-400 border-violet-400/30',
+  'Management':         'text-amber-400 border-amber-400/30',
+  'Other':              'text-slate-400 border-slate-400/30',
+};
