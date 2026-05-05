@@ -1,0 +1,12 @@
+{
+  "name": "StaffTask",
+  "type": "object",
+  "properties": {
+    "title": { "type": "string", "title": "Title" },
+    "description": { "type": "string", "title": "Description" },
+    "assigned_to": { "type": "string", "title": "Assigned To" },
+    "due_date": { "type": "string", "title": "Due Date", "format": "date" },
+    "status": { "type": "string", "title": "Status", "enum": ["pending", "in_progress", "completed"], "default": "pending" }
+  },
+  "required": ["title"]
+}

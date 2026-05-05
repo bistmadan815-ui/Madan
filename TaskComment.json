@@ -1,0 +1,24 @@
+{
+  "name": "TaskComment",
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "title": "Task ID"
+    },
+    "comment_text": {
+      "type": "string",
+      "title": "Comment"
+    },
+    "commenter_name": {
+      "type": "string",
+      "title": "Commenter Name"
+    },
+    "commenter_type": {
+      "type": "string",
+      "enum": ["client", "staff"],
+      "title": "Commenter Type"
+    }
+  },
+  "required": ["task_id", "comment_text", "commenter_name", "commenter_type"]
+}
